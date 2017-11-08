@@ -1,5 +1,5 @@
 defmodule UnsafeTest.ExplicitPublic do
-  use Unsafe
+  use Unsafe.Generator
 
   @unsafe [ { :test, 1, { UnsafeTest.ExplicitPublic, :public_handler } } ]
 

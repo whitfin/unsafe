@@ -1,5 +1,5 @@
 defmodule UnsafeTest.ExplicitPrivate do
-  use Unsafe
+  use Unsafe.Generator
 
   @unsafe [ { :test, 1, :private_handler } ]
 

@@ -65,18 +65,24 @@ defmodule UnsafeTest do
   end
 
   test "generation with invalid handlers" do
-    assert_raise CompileError, ~r/Invalid handler definition$/, fn ->
+    assert_raise CompileError, ~r/Invalid handler definition for test\/1$/, fn ->
       load_file("default_invalid")
     end
 
-    assert_raise CompileError, ~r/Invalid handler definition$/, fn ->
+    assert_raise CompileError, ~r/Invalid handler definition for test\/1$/, fn ->
       load_file("explicit_invalid")
     end
   end
 
   test "generation with missing handlers" do
-    assert_raise CompileError, ~r/Unable to locate handler for test\/1$/, fn ->
+    assert_raise CompileError, ~r/Invalid handler definition for test\/1$/, fn ->
       load_file("handler_missing")
+    end
+  end
+
+  test "generation with invalid definitions" do
+    assert_raise CompileError, ~r/Invalid function reference provided$/, fn ->
+      load_file("definition_invalid")
     end
   end
 

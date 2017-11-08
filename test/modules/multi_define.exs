@@ -1,5 +1,5 @@
 defmodule UnsafeTest.MultiDefine do
-  use Unsafe
+  use Unsafe.Generator
 
   @unsafe { :test, 1, :private_handler }
   @unsafe { :test, 2, :private_handler }

@@ -1,5 +1,5 @@
 defmodule UnsafeTest.MissingHandle do
-  use Unsafe
+  use Unsafe.Generator
 
   @unsafe [ { :test, 1 } ]
 

@@ -1,5 +1,5 @@
 defmodule UnsafeTest.MultiArity do
-  use Unsafe
+  use Unsafe.Generator
 
   @unsafe [ { :test, [ 1, 2 ], :private_handler } ]
 

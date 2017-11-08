@@ -1,6 +1,10 @@
 /_build
 /cover
 /deps
+/diff
+/doc
+/patch
+.DS_Store
+.tool-versions
 erl_crash.dump
 *.ez
-*.beam

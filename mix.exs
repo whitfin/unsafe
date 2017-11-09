@@ -7,7 +7,7 @@ defmodule Unsafe.Mixfile do
   def project do
     [
       app: :unsafe,
-      name: "unsafe",
+      name: "Unsafe",
       description: "Generate unsafe (!) bindings for Elixir functions",
       package: %{
         files: [

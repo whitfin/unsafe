@@ -1,4 +1,4 @@
-# unsafe
+# Unsafe
 [![Coverage Status](https://img.shields.io/coveralls/whitfin/unsafe.svg)](https://coveralls.io/github/whitfin/unsafe) [![Unix Build Status](https://img.shields.io/travis/whitfin/unsafe.svg?label=unix)](https://travis-ci.org/whitfin/unsafe) [![Windows Build Status](https://img.shields.io/appveyor/ci/whitfin/unsafe.svg?label=win)](https://ci.appveyor.com/project/whitfin/unsafe) [![Hex.pm Version](https://img.shields.io/hexpm/v/unsafe.svg)](https://hex.pm/packages/unsafe) [![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://hexdocs.pm/unsafe/)
 
 This library is designed at generating unsafe (!) bindings for Elixir

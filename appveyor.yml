@@ -1,0 +1,19 @@
+version: {branch}-{build}
+
+skip_commits:
+  message: /\[skip ci\]/
+
+environment:
+  elixir_version: 1.5.2
+
+install:
+  - cinst elixir --version %elixir_version%
+  - refreshenv
+
+build_script:
+  - mix local.hex --force
+  - mix local.rebar --force
+  - mix deps.get
+
+test_script:
+  - mix coveralls --trace

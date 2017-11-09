@@ -90,12 +90,12 @@ defmodule Unsafe do
 
   The existing option set is limited, and is as follows:
 
-    * docs - whether or not to enable documentation for the generated
+    * `docs` - whether or not to enable documentation for the generated
       functions. By default docs are disabled, so the unsafe functions
       are hidden from your documentation. If enabled, you should name
       your arguments instead of providing just an arity.
 
-    * handler - a default handler to apply to all `@unsafe` bindings
+    * `handler` - a default handler to apply to all `@unsafe` bindings
       which do not have an explicit handler set. This is useful if
       all of your definitions should use the same handler.
   """

@@ -31,6 +31,6 @@ defmodule Unsafe.Generator do
       |> Module.get_attribute(:unsafe_options)
       |> Kernel.||([])
 
-    Compiler.compile(env, binding, options)
+    Compiler.compile!(env, binding, options)
   end
 end

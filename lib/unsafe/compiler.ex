@@ -22,26 +22,26 @@ defmodule Unsafe.Compiler do
   Due to the bindings being pulled from module attributes, this function
   will accept nested lists of binding definitions and unpack as needed.
   """
-  @spec compile(Macro.Env.t, binding | [ binding ], Keyword.t) :: Macro.t
-  def compile(env, bindings, options) when is_list(bindings),
-    do: Enum.map(bindings, &compile(env, &1, options))
+  @spec compile!(Macro.Env.t, binding | [ binding ], Keyword.t) :: Macro.t
+  def compile!(env, bindings, options) when is_list(bindings),
+    do: Enum.map(bindings, &compile!(env, &1, options))
 
   # This will fire if the provided binding does not contain a
   # valid handler. If this is the case, the handler option will
   # be pulled from the binding options and passed through as the
   # handler to use for the binding (without any validation).
-  def compile(env, { name, arity }, options),
-    do: compile(env, { name, arity, options[:handler] }, options)
+  def compile!(env, { name, arity }, options),
+    do: compile!(env, { name, arity, options[:handler] }, options)
 
   # This definition fires when the provided binding includes a list of
   # arities and unpacks them into a list of bindings per arity. It then
-  # just passes the results through to the same compile/3 function
+  # just passes the results through to the same compile!/3 function
   # in order to make use of the same processing as any other bindings.
-  def compile(env, { name, [ head | _ ] = arity, handler }, options)
+  def compile!(env, { name, [ head | _ ] = arity, handler }, options)
   when is_integer(head) do
     arity
     |> Enum.map(&{ name, &1, handler })
-    |> Enum.map(&compile(env, &1, options))
+    |> Enum.map(&compile!(env, &1, options))
   end
 
   # This is the main definition which will compile a binding into a new
@@ -49,7 +49,7 @@ defmodule Unsafe.Compiler do
   # time. Arguments are generated based on the arity list provided and
   # passed to the main function reference, before being passed through
   # a validated handler and being returned from the unsafe function.
-  def compile(env, { name, arity, handler }, options) do
+  def compile!(env, { name, arity, handler }, options) do
     # determine whether we have arguments or arity
     { enum, length, generator } =
       if is_list(arity) do
@@ -110,7 +110,7 @@ defmodule Unsafe.Compiler do
 
   # Finally, if this definition fires, the provided definition
   # for the binding was totally invalid and should cause errors.
-  def compile(env, _invalid, _options),
+  def compile!(env, _invalid, _options),
     do: raise CompileError, [
       description: "Invalid function reference provided",
       file: env.file,

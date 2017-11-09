@@ -26,7 +26,7 @@ defmodule Unsafe.Mixfile do
       elixir: "~> 1.2",
       deps: deps(),
       docs: [
-        main: "unsafe",
+        main: "Unsafe",
         source_ref: "master",
         source_url: @url_github
       ],

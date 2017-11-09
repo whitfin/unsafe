@@ -1,4 +1,4 @@
-defmodule UnsafeTest.MultiArity do
+defmodule UnsafeTest.DefinitionArities do
   use Unsafe.Generator
 
   @unsafe [ { :test, [ 1, 2 ], :private_handler } ]

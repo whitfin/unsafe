@@ -1,8 +1,8 @@
 defmodule UnsafeTest.DefaultInvalid do
-  use Unsafe.Generator
+  use Unsafe.Generator,
+    handler: "invalid"
 
-  @unsafe_options [ handler: "invalid" ]
-  @unsafe_binding [ { :test, 1 } ]
+  @unsafe [ { :test, 1 } ]
 
   def test(true),
     do: { :ok, true }

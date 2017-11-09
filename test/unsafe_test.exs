@@ -38,8 +38,8 @@ defmodule UnsafeTest do
   end
 
   test "generation with multiple definitions" do
-    [{ arity_mod,  _contents }] = load_file("multi_arity")
-    [{ define_mod, _contents }] = load_file("multi_define")
+    [{ arity_mod, _contents }] = load_file("definition_arities")
+    [{ multi_mod, _contents }] = load_file("definition_multi")
 
     validate_mod = fn(mod) ->
       assert mod.test(true) == { :ok, true }
@@ -61,7 +61,28 @@ defmodule UnsafeTest do
     end
 
     validate_mod.(arity_mod)
-    validate_mod.(define_mod)
+    validate_mod.(multi_mod)
+  end
+
+  test "generation with named definitions" do
+    [{ mod, _contents }] = load_file("definition_named")
+
+    assert mod.test(true) == { :ok, true }
+    assert mod.test(true, true) == { :ok, true }
+
+    assert mod.test(false) == { :error, false }
+    assert mod.test(false, false) == { :error, false }
+
+    assert mod.test!(true) == true
+    assert mod.test!(true, true) == true
+
+    assert_raise RuntimeError, fn ->
+      mod.test!(false)
+    end
+
+    assert_raise RuntimeError, fn ->
+      mod.test!(false, false)
+    end
   end
 
   test "generation with invalid handlers" do

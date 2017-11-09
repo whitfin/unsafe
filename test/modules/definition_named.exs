@@ -1,8 +1,8 @@
-defmodule UnsafeTest.MultiDefine do
+defmodule UnsafeTest.DefinitionNamed do
   use Unsafe.Generator
 
-  @unsafe { :test, 1, :private_handler }
-  @unsafe { :test, 2, :private_handler }
+  @unsafe { :test, [ :bool ], :private_handler }
+  @unsafe { :test, [ :bool, :opts ], :private_handler }
 
   def test(bool, opts \\ [])
   def test(true, _opts),

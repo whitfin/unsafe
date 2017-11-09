@@ -1,8 +1,8 @@
 defmodule UnsafeTest.DefaultPrivate do
-  use Unsafe.Generator
+  use Unsafe.Generator,
+    handler: :private_handler
 
-  @unsafe_options [ handler: :private_handler ]
-  @unsafe_binding [ test: 1 ]
+  @unsafe [ test: 1 ]
 
   def test(true),
     do: { :ok, true }

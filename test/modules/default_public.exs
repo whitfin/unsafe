@@ -1,8 +1,8 @@
 defmodule UnsafeTest.DefaultPublic do
-  use Unsafe.Generator
+  use Unsafe.Generator,
+    handler: { UnsafeTest.DefaultPublic, :public_handler }
 
-  @unsafe_options [ handler: { UnsafeTest.DefaultPublic, :public_handler } ]
-  @unsafe_binding [ test: 1 ]
+  @unsafe [ test: 1 ]
 
   def test(true),
     do: { :ok, true }

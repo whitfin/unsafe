@@ -16,7 +16,7 @@ Hex (shown at the top of this README).
 
 ```elixir
 def deps do
-  [{:unsafe, "~> 1.0"}]
+  [{:unsafe, "~> 1.0", runtime: false}]
 end
 ```
 

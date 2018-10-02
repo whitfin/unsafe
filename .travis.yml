@@ -12,6 +12,11 @@ otp_release:
   - 19.3
   - 18.3
 matrix:
+  include:
+  - elixir: 1.7
+    otp_release: 21.0
+    script:
+      - MIX_ENV=cover mix coveralls.travis --trace
   exclude:
   - elixir: 1.7
     otp_release: 18.3
@@ -35,4 +40,4 @@ branches:
 before_install:
   - mix local.rebar --force
 script:
-  - mix coveralls.travis --trace
+  - mix test --trace

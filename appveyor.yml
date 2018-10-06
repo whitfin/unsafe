@@ -16,4 +16,4 @@ build_script:
   - "mix deps.get"
 
 test_script:
-  - "mix coveralls --trace"
+  - "mix test --trace"

@@ -1,5 +1,5 @@
 # Unsafe
-[![Build Status](https://img.shields.io/github/workflow/status/whitfin/unsafe/CI)](https://github.com/whitfin/unsafe/actions) (https://ci.appveyor.com/project/whitfin/unsafe) [![Coverage Status](https://img.shields.io/coveralls/whitfin/unsafe.svg)](https://coveralls.io/github/whitfin/unsafe) [![Hex.pm Version](https://img.shields.io/hexpm/v/unsafe.svg)](https://hex.pm/packages/unsafe) [![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://hexdocs.pm/unsafe/)
+[![Build Status](https://img.shields.io/github/workflow/status/whitfin/unsafe/CI)](https://github.com/whitfin/unsafe/actions) [![Coverage Status](https://img.shields.io/coveralls/whitfin/unsafe.svg)](https://coveralls.io/github/whitfin/unsafe) [![Hex.pm Version](https://img.shields.io/hexpm/v/unsafe.svg)](https://hex.pm/packages/unsafe) [![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://hexdocs.pm/unsafe/)
 
 This library is designed at generating unsafe (!) bindings for Elixir
 function definitions at compile time.

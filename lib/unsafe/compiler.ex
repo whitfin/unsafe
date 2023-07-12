@@ -111,9 +111,10 @@ defmodule Unsafe.Compiler do
   # Finally, if this definition fires, the provided definition
   # for the binding was totally invalid and should cause errors.
   def compile!(env, _invalid, _options),
-    do: raise CompileError, [
-      description: "Invalid function reference provided",
-      file: env.file,
-      line: env.line
-    ]
+    do:
+      raise(CompileError,
+        description: "Invalid function reference provided",
+        file: env.file,
+        line: env.line
+      )
 end

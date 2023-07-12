@@ -108,5 +108,5 @@ defmodule UnsafeTest do
   end
 
   defp load_file(file),
-    do: Code.load_file("test/modules/#{file}.exs")
+    do: Code.require_file("test/modules/#{file}.exs")
 end

@@ -37,7 +37,7 @@ defmodule Unsafe.Mixfile do
         docs: :docs,
         coveralls: :cover,
         "coveralls.html": :cover,
-        "coveralls.travis": :cover
+        "coveralls.github": :cover
       ]
     ]
   end

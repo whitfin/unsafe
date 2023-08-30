@@ -45,7 +45,7 @@ jobs:
     name: Coverage
     runs-on: ubuntu-latest
     container:
-      image: elixir:1.15
+      image: elixir:1.14
     env:
       MIX_ENV: cover
     steps:

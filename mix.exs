@@ -60,8 +60,8 @@ defmodule Unsafe.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:ex_doc, "~> 0.16", optional: true, only: [:docs]},
-      {:excoveralls, "~> 0.7", optional: true, only: [:cover]}
+      {:ex_doc, "~> 0.30", optional: true, only: [:docs]},
+      {:excoveralls, "~> 0.17", optional: true, only: [:cover]}
     ]
   end
 end

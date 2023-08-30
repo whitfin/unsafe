@@ -15,12 +15,12 @@ defmodule Unsafe.Mixfile do
           "mix.exs",
           "LICENSE"
         ],
-        licenses: [ "MIT" ],
+        licenses: ["MIT"],
         links: %{
           "Docs" => @url_docs,
           "GitHub" => @url_github
         },
-        maintainers: [ "Isaac Whitfield" ]
+        maintainers: ["Isaac Whitfield"]
       },
       version: "1.0.1",
       elixir: "~> 1.2",
@@ -60,8 +60,8 @@ defmodule Unsafe.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      { :ex_doc,      "~> 0.16", optional: true, only: [ :docs ] },
-      { :excoveralls, "~> 0.7",  optional: true, only: [ :cover ] }
+      {:ex_doc, "~> 0.16", optional: true, only: [:docs]},
+      {:excoveralls, "~> 0.7", optional: true, only: [:cover]}
     ]
   end
 end

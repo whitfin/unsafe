@@ -17,13 +17,13 @@ defmodule Unsafe.Generator do
       @before_compile Unsafe.Generator
       @unsafe_options unquote(options)
 
-      Module.register_attribute(__MODULE__, :unsafe, [ accumulate: true ])
+      Module.register_attribute(__MODULE__, :unsafe, accumulate: true)
     end
   end
 
   # The compiler hook which will invoke the main compilation phase
   # found in `Unsafe.Compiler.compile/3` to compile the definitions.
-  defmacro __before_compile__(%{ module: module } = env) do
+  defmacro __before_compile__(%{module: module} = env) do
     binding = Module.get_attribute(module, :unsafe)
 
     options =

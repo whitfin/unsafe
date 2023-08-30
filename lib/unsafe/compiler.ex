@@ -63,7 +63,7 @@ defmodule Unsafe.Compiler do
     # generate the parameters used to define the proxy
     params = Enum.map(enum, generator)
 
-    # create a defintion for the proxy; apply(env.module, name, params)
+    # create a definition for the proxy; apply(env.module, name, params)
     result =
       quote do: apply(unquote(env.module), unquote(name), unquote(params))
 

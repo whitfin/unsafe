@@ -59,7 +59,9 @@ jobs:
           mix deps.get
 
       - name: Generate Coverage
-        run: mix coveralls.github
+        run: |
+          git config --global --add safe.directory /__w/unsafe/unsafe
+          mix coveralls.github
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
